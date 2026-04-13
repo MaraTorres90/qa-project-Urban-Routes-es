@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
+from data import test_data as data
 
 
 @pytest.fixture
@@ -18,7 +19,7 @@ def driver():
         options=options
     )
 
-    driver.get("https://cnt-c198b977-7488-46be-9e6c-267aab8f95b4.containerhub.tripleten-services.com?lng=es")
+    driver.get(data.BASE_URL)
 
     yield driver
 

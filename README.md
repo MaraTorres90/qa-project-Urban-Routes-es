@@ -84,4 +84,4 @@ Todas las interacciones con la interfaz están encapsuladas en la clase Page Obj
 Los datos de prueba están separados para facilitar el mantenimiento.
 Autor
 
-Reyna Torres García
+Reyna Maarabid de Jesús Torres García

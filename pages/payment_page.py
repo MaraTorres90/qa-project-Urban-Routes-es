@@ -141,9 +141,7 @@ class PaymentPage(BasePage):
             ec.visibility_of_element_located(self.CARD_NUMBER)
         )
 
-        self.wait.until(
-            ec.visibility_of_element_located(self.CARD_NUMBER)
-        )
+
         self.driver.find_element(*self.CARD_NUMBER).send_keys(number)
 
         card_code_input = self.driver.find_element(*self.CARD_CODE)

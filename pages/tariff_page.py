@@ -27,3 +27,9 @@ class TariffPage(BasePage):
                 (By.XPATH, "//div[contains(@class,'tcard active')]//div[text()='Comfort']")
             )
         )
+
+    def comfort_rate_is_selected(self):
+         element = self.wait.until(
+            ec.presence_of_element_located(self.COMFORT_TARIFF)
+        )
+         return "active" in element.get_attribute("class")
