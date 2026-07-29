@@ -1,87 +1,51 @@
-Pruebas Automatizadas Urban Routes
-Nombre del Proyecto
+# Proyecto Urban Routes
 
-Urban Routes - Automatización de Pruebas End-to-End (Sprint 9)
+## Descripción del proyecto
 
-Descripción del Proyecto
+En este proyecto realicé pruebas automatizadas para la aplicación Urban Routes.
+El objetivo fue comprobar el proceso completo para pedir un taxi.
 
-Este proyecto contiene pruebas automatizadas end-to-end para la aplicación web Urban Routes. El objetivo es validar el flujo completo de solicitud de un taxi utilizando Selenium y pytest.
+Las pruebas realizan los siguientes pasos:
 
-Las pruebas automatizadas simulan el comportamiento real de un usuario, cubriendo funcionalidades clave como:
+- Escribir las direcciones de origen y destino.
+- Seleccionar la tarifa Comfort.
+- Agregar un número de teléfono.
+- Agregar una tarjeta.
+- Escribir un mensaje para el conductor.
+- Pedir una manta y pañuelos.
+- Pedir dos helados.
+- Solicitar el taxi.
+- Comprobar que aparece la ventana de búsqueda del conductor.
+- Esperar la información del conductor.
 
-Configuración de dirección de origen y destino
-Selección de la tarifa Comfort
-Ingreso del número de teléfono
-Agregar una tarjeta de crédito
-Escribir un mensaje para el conductor
-Seleccionar opciones adicionales (manta y pañuelos)
-Solicitar productos (helados)
-Pedir un taxi
-Validar que el proceso de asignación de conductor inicia correctamente
+## Tecnologías y técnicas utilizadas
 
-Este proyecto sigue buenas prácticas de automatización utilizando el patrón de diseño Page Object Model (POM).
+Para realizar el proyecto utilicé:
 
-Tecnologías y Técnicas Utilizadas
-Tecnologías
-Python 3
-Selenium WebDriver
-pytest
-Técnicas y Conceptos
-Page Object Model (POM)
-Esperas explícitas (WebDriverWait)
-Automatización de pruebas UI
-Separación de datos de prueba (data.py)
-Estructura modular y escalable
-Pruebas End-to-End (E2E)
-Estructura del Proyecto
-qa-project-Urban-Routes-es/
-│
-├── data/
-│   └── test_data.py
-│
-├── pages/
-│   ├── base_page.py
-│   ├── home_page.py
-│   ├── tariff_page.py
-│   ├── payment_page.py
-│   ├── order_page.py
-│   └── ride_modal.py
-│
-├── tests/
-│   └── test_order_taxi.py
-│
-├── utils/
-│   ├── helpers.py
-│   └── retrieve_code.py
-│
-├── conftest.py
-├── requirements.txt
-├──.gitignore
-└── README.md
-Cómo Ejecutar las Pruebas
-1. Clonar el repositorio
-git clone <repository_url>
-cd urban_routes_tests
-2. Instalar dependencias
+- Python para escribir el código.
+- Selenium WebDriver para controlar el navegador.
+- Pytest para crear y ejecutar las pruebas.
+- Localizadores como ID, CSS Selector y XPath para encontrar los elementos.
+- Esperas explícitas para esperar a que los elementos aparezcan.
+- Page Object Model para separar las acciones de la página de las pruebas.
 
-Asegúrate de tener Python instalado y ejecuta:
+## Cómo ejecutar las pruebas
 
+Primero se debe iniciar el servidor de Urban Routes y copiar su dirección en la
+variable `BASE_URL` del archivo `data.py`.
+
+Después, se abre una terminal en la carpeta del proyecto y se instalan las
+dependencias:
+
+```powershell
 pip install -r requirements.txt
+```
 
-(Si no tienes requirements.txt, instala manualmente:)
+Para ejecutar todas las pruebas:
 
-pip install selenium pytest
-3. Ejecutar las pruebas
-pytest tests/test_order_taxi.py
-4. (Opcional) Ejecutar con salida detallada
-pytest -v
-Configuración
-Actualiza la variable BASE_URL en data.py con el entorno asignado.
-Asegúrate de tener ChromeDriver instalado y compatible con tu navegador.
-Notas
-El proyecto utiliza esperas explícitas para mejorar la estabilidad de las pruebas.
-Todas las interacciones con la interfaz están encapsuladas en la clase Page Object.
-Los datos de prueba están separados para facilitar el mantenimiento.
-Autor
+```powershell
+pytest main.py -v
+```
 
-Reyna Maarabid de Jesús Torres García
+Al ejecutar el comando, Chrome se abre automáticamente y las pruebas realizan
+el proceso de pedir un taxi.
