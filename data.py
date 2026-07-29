@@ -1,6 +1,6 @@
 """Datos que usan las pruebas."""
 
-# Cambia esta dirección cada vez que TripleTen reinicie el servidor.
+# Cambia esta dirección cada vez que inicies el servidor de tripleten.
 BASE_URL = (
     "https://cnt-ee604c96-13cd-43cf-99ad-fada03ae6b34.containerhub.tripleten-services.com?lng=es"
 )
